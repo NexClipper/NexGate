@@ -14,9 +14,7 @@ public class Register {
 	private Map<String, String> port;
 	private Map<String, String> dataCenterInfo;
 	private Map<String, String> metadata;
-	private Map<String, String> leaseInfo; 
-	
-	// private String healthCheckUrl = "http://111.111.111.11:9999/health";
+	private Map<String, String> leaseInfo;
 	
 	public Register() {
 		// TODO Auto-generated constructor stub
@@ -107,27 +105,6 @@ public class Register {
 	public void setMetadata(Map<String, String> metadata) {
 		this.metadata = metadata;
 	}
-
-	public Map<String, String> getLeaseInfo() {
-		if(leaseInfo == null)
-			leaseInfo = new HashMap<>();
-		
-		return leaseInfo;
-	}
-
-	public void setLeaseInfo(Map<String, String> leaseInfo) {
-		this.leaseInfo = leaseInfo;
-	}
-
-	/*
-	public String getHealthCheckUrl() {
-		return healthCheckUrl;
-	}
-
-	public void setHealthCheckUrl(String healthCheckUrl) {
-		this.healthCheckUrl = healthCheckUrl;
-	}
-	*/
 
 	@Override
 	public String toString() {

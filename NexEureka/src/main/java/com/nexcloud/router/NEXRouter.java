@@ -12,7 +12,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.nexcloud.router.service.RegisterExecutor;
 
-
+/**
+ * Eureka Server
+ * @author Nelson Kim
+ *
+ */
 @EnableEurekaServer
 @RestController
 @SpringBootApplication
@@ -33,22 +37,7 @@ public class NEXRouter {
 			e.printStackTrace();
 		}
 	}
-	
-	/*
-	@Autowired
-	private RegisterService registerService;
-	
-	@Scheduled(fixedDelay = 1000*20, initialDelay = 1000)
-	public void serviceRegister() {
-		try {
-			registerService.register();
-		} catch (Exception e) {
-			// TODO: handle exception
-			e.printStackTrace();
-		}
-	}
-	*/
-	
+
 	/**
 	 * DC/OS Process Check Bit
 	 * 
