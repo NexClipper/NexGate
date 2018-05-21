@@ -21,8 +21,7 @@ NexGate is API Gateway for DC/OS using Spring Cloud(Eureka, ZUUL).
 
 
 ## NexEureka
-
-    NexEureka is the NexCloud's customed Eureka which can register service without Eureka client. In standard Erueka, you must inject dependency to registered service. But, in NexEureka, you need just NexEureka service on your server. We made functions that crawls services deployed by Marathon and register them to Eureka Server. It renews service list by 30 secs, so it is safe when error occureed from one of services instances.
+NexEureka is the NexCloud's customed Eureka which can register service without Eureka client. In standard Erueka, you must inject dependency to registered service. But, in NexEureka, you need just NexEureka service on your server. We made functions that crawls services deployed by Marathon and register them to Eureka Server. It renews service list by 30 secs, so it is safe when error occureed from one of services instances.
 
 1. Benefits
     * Supports service discovery by itself.
