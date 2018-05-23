@@ -1,4 +1,4 @@
-### NexGate
+# NexGate
 NexGate is API Gateway for DC/OS using Spring Cloud(Eureka, ZUUL).
 
 1. Environments
