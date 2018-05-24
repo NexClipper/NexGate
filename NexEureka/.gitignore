@@ -22,3 +22,7 @@ nbbuild/
 dist/
 nbdist/
 .nb-gradle/
+
+### CI/CD ###
+Dockerfile
+build.xml
