@@ -106,11 +106,17 @@ public class Register {
 		this.metadata = metadata;
 	}
 
+	public Map<String, String> getLeaseInfo() {	
+		return leaseInfo; 
+	}
+
+	public void setLeaseInfo(Map<String, String> leaseInfo) { 
+		this.leaseInfo = leaseInfo;
+	}
+
 	@Override
 	public String toString() {
 		return "Register [app=" + app + ", ipAddr=" + ipAddr + ", hostName=" + hostName + ", status=" + status
 				+ ", port=" + port + ", dataCenterInfo=" + dataCenterInfo + "]";
 	}
-
-	
 }

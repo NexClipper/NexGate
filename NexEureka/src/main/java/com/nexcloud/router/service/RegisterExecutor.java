@@ -25,15 +25,9 @@ public class RegisterExecutor {
 
 	@Value("${eureka.endpoint}")
 	private String eurekaUrl;
-
-	@Value("${eureka.endpoint_test}")
-	private String eurekaUrlTest;
-
-	@Value("${op.mode}")
-	private String mode;
 	
 	public void registerExecute(){
-		RegisterTask registerTask = new RegisterTask(marathon_tasks_endpoint, eurekaUrl, eurekaUrlTest, mode);
+		RegisterTask registerTask = new RegisterTask(marathon_tasks_endpoint, eurekaUrl);
 		tPool.execute(registerTask);
 	}
 }
