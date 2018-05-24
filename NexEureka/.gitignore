@@ -28,3 +28,6 @@ nbdist/
 ### CI/CD ###
 Dockerfile
 build.xml
+
+### log ###
+*.txt
