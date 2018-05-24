@@ -81,7 +81,7 @@
                 },
                 "fetch": [],
                 "constraints": []
-                }
+            }
             ```
 
         * NexZUUL
