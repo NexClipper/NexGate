@@ -16,73 +16,73 @@
     * First option is that fork this repository and build Docker images, and deploy application on DC/OS.
     * Second option is deploy JSON configuration we suggested. JSON configuration is like samples below.
         * NexEureka
-        ```json
-        {
-            "id": "/nexeureka",
-            "backoffFactor": 1.15,
-            "backoffSeconds": 1,
-            "container": {
-                "portMappings": [
-                {
-                    "containerPort": 8770,
-                    "hostPort": 8770,
-                    "labels": {
-                    "VIP_0": "/nexeureka:8770"
-                    },
-                    "protocol": "tcp",
-                    "servicePort": 10020
-                }
+            ```json
+            {
+                "id": "/nexeureka",
+                "backoffFactor": 1.15,
+                "backoffSeconds": 1,
+                "container": {
+                    "portMappings": [
+                    {
+                        "containerPort": 8770,
+                        "hostPort": 8770,
+                        "labels": {
+                        "VIP_0": "/nexeureka:8770"
+                        },
+                        "protocol": "tcp",
+                        "servicePort": 10020
+                    }
+                    ],
+                    "type": "DOCKER",
+                    "volumes": [],
+                    "docker": {
+                    "image": "nexclipper/nexrouter",
+                    "forcePullImage": true,
+                    "privileged": false,
+                    "parameters": []
+                    }
+                },
+                "cpus": 0.5,
+                "disk": 0,
+                "healthChecks": [
+                    {
+                    "gracePeriodSeconds": 300,
+                    "intervalSeconds": 60,
+                    "maxConsecutiveFailures": 3,
+                    "portIndex": 0,
+                    "timeoutSeconds": 20,
+                    "delaySeconds": 15,
+                    "protocol": "MESOS_HTTP",
+                    "path": "/check"
+                    }
                 ],
-                "type": "DOCKER",
-                "volumes": [],
-                "docker": {
-                "image": "nexclipper/nexrouter",
-                "forcePullImage": true,
-                "privileged": false,
-                "parameters": []
+                "instances": 1,
+                "labels": {
+                    "MARATHON_TASKS_ENDPOINT": "YOUR MARATHON ENDPOINT /v2/tasks",
+                    "EUREKA_ENDPOINT": "http://nexrouter.marathon.mesos:8770/eureka/apps/"
+                },
+                "maxLaunchDelaySeconds": 3600,
+                "mem": 1536,
+                "gpus": 0,
+                "networks": [
+                    {
+                    "mode": "container/bridge"
+                    }
+                ],
+                "requirePorts": false,
+                "upgradeStrategy": {
+                    "maximumOverCapacity": 1,
+                    "minimumHealthCapacity": 1
+                },
+                "killSelection": "YOUNGEST_FIRST",
+                "unreachableStrategy": {
+                    "inactiveAfterSeconds": 0,
+                    "expungeAfterSeconds": 0
+                },
+                "fetch": [],
+                "constraints": []
                 }
-            },
-            "cpus": 0.5,
-            "disk": 0,
-            "healthChecks": [
-                {
-                "gracePeriodSeconds": 300,
-                "intervalSeconds": 60,
-                "maxConsecutiveFailures": 3,
-                "portIndex": 0,
-                "timeoutSeconds": 20,
-                "delaySeconds": 15,
-                "protocol": "MESOS_HTTP",
-                "path": "/check"
-                }
-            ],
-            "instances": 1,
-            "labels": {
-                "MARATHON_TASKS_ENDPOINT": "YOUR MARATHON ENDPOINT /v2/tasks",
-                "EUREKA_ENDPOINT": "http://nexrouter.marathon.mesos:8770/eureka/apps/"
-            },
-            "maxLaunchDelaySeconds": 3600,
-            "mem": 1536,
-            "gpus": 0,
-            "networks": [
-                {
-                "mode": "container/bridge"
-                }
-            ],
-            "requirePorts": false,
-            "upgradeStrategy": {
-                "maximumOverCapacity": 1,
-                "minimumHealthCapacity": 1
-            },
-            "killSelection": "YOUNGEST_FIRST",
-            "unreachableStrategy": {
-                "inactiveAfterSeconds": 0,
-                "expungeAfterSeconds": 0
-            },
-            "fetch": [],
-            "constraints": []
-            }
-        ```
+            ```
 
         * NexZUUL
 
