@@ -2,7 +2,7 @@
 * NexGate is NexCloud's API Gateway made of NexEureka and NexZUUL using Spring Cloud for DC/OS. If you just install NexEureka and NexZUUL, you can access Micro Service through service name.
 
 * Architecture  
-    ![apigateway_nexgate](https://steemitimages.com/600x0//https://github.com/TheNexCloud/NexGate/blob/dev-mg.kim/images/customed_eureka_zuul.PNG?raw=true)
+    ![apigateway_nexgate](https://steemitimages.com/600x0//https://raw.githubusercontent.com/TheNexCloud/NexGate/dev-mg.kim/images/customed_eureka_zuul.PNG)
 
 * Environments
     * Over JAVA 8
