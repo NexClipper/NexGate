@@ -4,8 +4,6 @@
 * Architecture  
     ![apigateway_nexgate](https://steemitimages.com/600x0//https://github.com/TheNexCloud/NexGate/blob/dev-mg.kim/images/customed_eureka_zuul.PNG?raw=true)
 
-* If Eureka client is registered to Eureka server, client replicates services registered to server. If the service is not edge service, it is inefficient that eureka dependency is injected to project.
-
 * Environments
     * Over JAVA 8
     * Over Spring 4
@@ -96,6 +94,8 @@
     * Eureka has server - client Architecture for service registry. So you must have client source to register to Eureka server.  
         ![eureka_server_client](https://steemitimages.com/600x0//https://github.com/TheNexCloud/NexGate/blob/dev-mg.kim/images/standard_eureka.png?raw=true)
 
+    * If Eureka client is registered to Eureka server, client replicates services registered to server. If the service is not edge service, it is inefficient that eureka dependency is injected to project.
+    
     * By defaults, Spring Cloud supports only JAVA application, so if you want to register NON-JAVA applicatation, you need to adopt side-car.
 
 * Advantages of NexEureka
