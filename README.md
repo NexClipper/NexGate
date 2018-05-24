@@ -95,7 +95,7 @@
         ![eureka_server_client](https://steemitimages.com/600x0//https://github.com/TheNexCloud/NexGate/blob/dev-mg.kim/images/standard_eureka.png?raw=true)
 
     * If Eureka client is registered to Eureka server, client replicates services registered to server. If the service is not edge service, it is inefficient that eureka dependency is injected to project.
-    
+
     * By defaults, Spring Cloud supports only JAVA application, so if you want to register NON-JAVA applicatation, you need to adopt side-car.
 
 * Advantages of NexEureka
@@ -111,5 +111,7 @@
     * ZUUL is a simple gateway service or edge service. So its main goal is routing, monitoring, error management and security. Many API gateway products offers limited functions, but ZUUL is free to customize its functions for developers.
 
     * API gateway using Eureka and ZUUL
-        ![apigateway_eureka_zuul](https://steemitimages.com/600x0//https://github.com/TheNexCloud/NexGate/blob/dev-mg.kim/images/standard_eureka_zuul.PNG?raw=true)
-        * If Eureka client is registered to Eureka server, client replicates services registered to server. If the service is not edge service, it is inefficient that eureka dependency is injected to project.
+        ![apigateway_eureka_zuul](https://steemitimages.com/600x0//https://github.com/TheNexCloud/NexGate/blob/dev-mg.kim/images/standard_eureka_zuul.PNG?raw=true)  
+        *You must inject Eureka client dependency to you micro service*
+
+* With NexEureka, just deploy micro services with no additional dependencies and access service though service name.
