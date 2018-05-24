@@ -29,20 +29,13 @@ public class RegisterTask implements Runnable {
 
 	private String eurekaUrl;
 
-	private String eurekaUrlTest;
-
-	private String mode;
-
-	public RegisterTask(String marathon_tasks_endpoint, String eurekaUrl, String eurekaUrlTest, String mode) {
+	public RegisterTask(String marathon_tasks_endpoint, String eurekaUrl) {
 		this.marathon_tasks_endpoint = marathon_tasks_endpoint;
 		this.eurekaUrl = eurekaUrl;
-		this.eurekaUrlTest = eurekaUrlTest;
-		this.mode = mode;
 	}
 
 	@Override
 	public void run() {
-		System.out.println("=========================== REGISTER ========================");
 		ResponseEntity<Marathon> marathonRes = restTemplate.getForEntity(marathon_tasks_endpoint, Marathon.class);
 
 		Marathon marathon = marathonRes.getBody();
@@ -51,11 +44,7 @@ public class RegisterTask implements Runnable {
 		Map<String, String> metadata = new HashMap<>();
 		Map<String, String> leaseInfo = new HashMap<>();
 
-		String eurekaEndpoint = null;
-		if ("O".equals(mode))
-			eurekaEndpoint = eurekaUrl;
-		else
-			eurekaEndpoint = eurekaUrlTest;
+		String eurekaEndpoint = eurekaUrl;
 
 		leaseInfo.put("durationInSecs", "30");
 
@@ -80,11 +69,7 @@ public class RegisterTask implements Runnable {
 				}
 				String ipAddr = task.getHost();
 
-				String hostName = "";
-				if ("O".equals(mode))
-					hostName = app + ".marathon.mesos"; // Operate config
-				else
-					hostName = task.getHost(); // Test config
+				String hostName = app + ".marathon.mesos";
 
 				String status = "UP";
 				Map<String, String> dataCenterInfo = new HashMap<>();
@@ -119,7 +104,5 @@ public class RegisterTask implements Runnable {
 				}
 			}
 		}
-	}
-	
-	
+	}	
 }
