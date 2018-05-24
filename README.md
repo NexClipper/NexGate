@@ -11,7 +11,16 @@
     * Over Maven 3.5.2
 
 * Installation
-    * First option is that fork this repository and build Docker images, and deploy application on DC/OS.
+    * First option is that fork this repository, modify application.properties, build Docker images, and deploy application on DC/OS.
+        * NexEureka's application.properties  
+        : In ***application.properties***, you just modify two env variables - ***eureka.endpoint*** and ***marathon.tasks.endpoint***  
+        : ***marathon.tasks.endpoint*** is your Marathon's URL to call service list via Marathon REST API.  
+        : ***eureka.endpoint*** is Mesos DNS for eureka to register service list via Eureka REST API.
+            ```properties
+            marathon.tasks.endpoint=${MARATHON_TASKS_ENDPOINT}
+            eureka.endpoint=${EUREKA_ENDPOINT}
+            ```
+            
     * Second option is deploy JSON configuration we suggested. JSON configuration is like samples below.
         * NexEureka
             ```json
@@ -89,7 +98,7 @@
 * NexEureka is the NexCloud's customed Eureka which can register service without Eureka client. In standard Erueka, you must inject dependency to registered service. But, in NexEureka, you need just NexEureka service on your server. We made functions that crawls services deployed by Marathon and register them to Eureka Server. It renews service list by 30 secs, so it is safe when error occured from one of services instances.
 
 * Waht is Eureka?
-    * Eureka is Spring Cloud project for service discovery in Micro Service Architecture. If you want to use service discover by Eureka, you have to initialize Eureka Server by putting *@EnableEurekaServer* annotaion in main class of Eureka Server Project. Then put *@EnableEurekaClient* annotaion in main class of serivce that you want to use.
+    * Eureka is Spring Cloud project for service discovery in Micro Service Architecture. If you want to use service discover by Eureka, you have to initialize Eureka Server by putting ***@EnableEurekaServer*** annotaion in main class of Eureka Server Project. Then put ***@EnableEurekaClient*** annotaion in main class of serivce that you want to use.
 
     * Eureka has server - client Architecture for service registry. So you must have client source to register to Eureka server.  
         ![eureka_server_client](https://steemitimages.com/600x0//https://github.com/TheNexCloud/NexGate/blob/dev-mg.kim/images/standard_eureka.png?raw=true)
