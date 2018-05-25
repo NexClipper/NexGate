@@ -171,7 +171,7 @@
         ![zull_routes_capture](https://steemitimages.com/500x0//https://github.com/TheNexCloud/NexGate/blob/dev-mg.kim/images/zull_routes_capture.jpg?raw=true)  
         Our sample API service ID is ***tracing-sample_nexservice***.
 
-        4. You can access this service via NexZuul. This indicates that you can access any service through ***NexZuul/service_id***.
+        4. You can access this service via NexZuul. This indicates that you can access any service through ***NexZuul/service_id***.  
         ![access_service_via_zull_capture](https://steemitimages.com/500x0//https://github.com/TheNexCloud/NexGate/blob/dev-mg.kim/images/access_service_via_zuul_capture.jpg?raw=true)
 
 ## What is NexEureka?
