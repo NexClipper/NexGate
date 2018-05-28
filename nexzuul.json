@@ -35,9 +35,6 @@
       }
     ],
     "instances": 1,
-    "labels": {
-      
-    },
     "maxLaunchDelaySeconds": 3600,
     "mem": 1024,
     "gpus": 0,
