@@ -44,7 +44,7 @@
                     "type": "DOCKER",
                     "volumes": [],
                     "docker": {
-                    "image": "nexclipper/nexrouter",
+                    "image": "nexclipper/nexeureka",
                     "forcePullImage": true,
                     "privileged": false,
                     "parameters": []
@@ -52,6 +52,10 @@
                 },
                 "cpus": 0.5,
                 "disk": 0,
+                "env": {
+                    "MARATHON_TASKS_ENDPOINT": "http://leader.mesos:8080/v2/tasks",
+                    "EUREKA_ENDPOINT": "http://nexrouter.marathon.mesos:8770/eureka/apps/"
+                },
                 "healthChecks": [
                     {
                     "gracePeriodSeconds": 300,
@@ -65,10 +69,6 @@
                     }
                 ],
                 "instances": 1,
-                "labels": {
-                    "MARATHON_TASKS_ENDPOINT": "http://leader.mesos:8080/v2/tasks",
-                    "EUREKA_ENDPOINT": "http://nexrouter.marathon.mesos:8770/eureka/apps/"
-                },
                 "maxLaunchDelaySeconds": 3600,
                 "mem": 1536,
                 "gpus": 0,
@@ -95,7 +95,7 @@
         * NexZUUL
             ```json
             {
-                "id": "/nexgate/nexzuul",
+                "id": "nexgate/nexzuul",
                 "backoffFactor": 1.15,
                 "backoffSeconds": 1,
                 "container": {
@@ -131,9 +131,6 @@
                 }
                 ],
                 "instances": 1,
-                "labels": {
-                
-                },
                 "maxLaunchDelaySeconds": 3600,
                 "mem": 1024,
                 "gpus": 0,
