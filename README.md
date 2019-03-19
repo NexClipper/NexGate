@@ -4,7 +4,7 @@
 * Architecture  
     ![apigateway_nexgate](https://steemitimages.com/800x0//https://raw.githubusercontent.com/TheNexCloud/NexGate/dev-mg.kim/images/customed_eureka_zuul.PNG?raw=true)
 
-* Environments
+* Environments 
     * Over JAVA 8
     * Over Spring 4
     * Over Spring boot 1.5.9
